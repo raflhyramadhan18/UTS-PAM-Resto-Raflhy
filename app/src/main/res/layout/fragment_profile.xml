@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".ProfileFragment">
+
+    <TextView
+        android:id="@+id/tvProfileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Profile Saya"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardProfileInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfileTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfileAvatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                app:strokeColor="@color/secondary_text_color"
+                app:strokeWidth="1dp"
+                app:tint="@color/secondary_text_color" />
+
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivProfileAvatar"
+                app:layout_constraintTop_toTopOf="@+id/ivProfileAvatar"
+                tools:text="Halo, Nazwa" />
+
+            <TextView
+                android:id="@+id/tvProfileEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/secondary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvProfileName"
+                app:layout_constraintStart_toStartOf="@+id/tvProfileName"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileName"
+                tools:text="nazwa@example.com" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/llMenuOptions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/menu_background_rounded"
+        android:orientation="vertical"
+        android:paddingVertical="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardProfileInfo"
+        app:layout_constraintStart_toStartOf="@+id/cardProfileInfo"
+        app:layout_constraintTop_toBottomOf="@+id/cardProfileInfo">
+
+        <TextView
+            android:id="@+id/tvMenuEditProfile"
+            style="@style/ProfileMenuItem"
+            android:drawableStart="@drawable/ic_edit"
+            android:text="Edit Profile" />
+
+        <View style="@style/ProfileMenuDivider" />
+
+        <TextView
+            android:id="@+id/tvMenuSettings"
+            style="@style/ProfileMenuItem"
+            android:drawableStart="@drawable/ic_settings"
+            android:text="Pengaturan" />
+
+        <View style="@style/ProfileMenuDivider" />
+
+        <TextView
+            android:id="@+id/tvMenuHelp"
+            style="@style/ProfileMenuItem"
+            android:drawableStart="@drawable/ic_help"
+            android:text="Pusat Bantuan" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignOut"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:paddingVertical="14dp"
+        android:text="Sign Out"
+        android:textColor="@color/accent_color"
+        android:textSize="18sp"
+        app:backgroundTint="#FEEAE1"
+        app:cornerRadius="28dp"
+        app:icon="@drawable/ic_logout"
+        app:iconTint="@color/accent_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/accent_color"
+        app:strokeColor="@color/accent_color"
+        app:strokeWidth="1dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
